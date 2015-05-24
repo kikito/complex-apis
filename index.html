@@ -57,6 +57,12 @@
 
 ***
 
+<a href="http://www.3scale.net"><img src="./img/3scale.png" height=300></a>
+
+http://www.3scale.net
+
+***
+
 https://kikito.github.io/complex-apis
 
 ***
@@ -64,22 +70,12 @@ https://kikito.github.io/complex-apis
 <!-- .slide: data-background="#008AB8" -->
 
 ## 1. Intro
-## 2. Foo
-## 3. Bar
-## 4. Baz
-## 5. Conclusion
+## 2. General Guidelines
+## 3. User Guidelines
+## 4. Conclusion
 
 ***
 
-<figure class="stretch">
-  <img src="./img/front-bg.jpg">
-</figure>
-
-***
-
-> “A caption”
-
-***
 <!-- .slide: data-background="./img/front-bg.jpg" -->
 
 # 1.
@@ -134,29 +130,15 @@ $ curl -X POST -d '' 0.0.0.0/hello
 
 ***
 
-## People
-
-***
-
-## Guidelines, not rules
-
-***
-
-<!-- .slide: data-background="./img/front-bg.jpg" -->
-
-# 2.
-# People
-***
-
-# TODO: Image of people
-
-***
-
-# TODO: Image of brain
+<!-- .slide: data-background="./img/brain.png" -->
 
 ***
 
 <!-- .slide: data-background="./img/beware.jpg" -->
+
+***
+
+## Guidelines, not rules
 
 ***
 
@@ -277,28 +259,250 @@ $ curl -X POST -d '' 0.0.0.0/hello
 
 <!-- .slide: data-background="./img/front-bg.jpg" -->
 
-# 3.
-# Applications
+# 2.
+# General Guidelines
 
 ***
 
+## a. Minimize
+
+***
+
+### YAGNI
+
+> “You Aren't Going to Need It”
+
+***
+
+### YAGNI
+
+> “You Aren't Going to Need It”
+
+<img src="./img/sand-hand.jpg" width=200 height=150>
+<img src="./img/bucket.jpg" width=200 height=150>
+<img src="./img/analysis.jpg" width=200 height=150>
+
+***
+
+## b. Group
+
+***
+
+``` no-highlight
+api.foo.io/accounts/...
+
+api.foo.io/orders/...
+
+api.foo.io/purchases/...
+```
+
+***
+
+<figure class="stretch">
+  <img src="./img/graph.png" width=800>
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/sand-hand.jpg" width=800>
+</figure>
+
+***
+
+``` no-highlight
+api.foo.io/accounts/...
+
+api.foo.io/orders/...
+
+api.foo.io/purchases/...
+```
+
+***
+
+``` no-highlight
+api.foo.io/accounts/v2/...
+
+api.foo.io/orders/v1/...
+
+api.foo.io/purchases/v3/...
+```
+
+***
+
+### Group by responsibility
+
+***
+
+### Responsibility
+
+> “The reason an API has to change”
+
+***
+
+<a href="http://swagger.io"><img src="./img/swagger.png"></a>
+
+http://swagger.io
+
+https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#tagObject
+
+***
+
+<a href="http://petstore.swagger.io/"><img src="./img/swagger-ui.png"></a>
+
+http://petstore.swagger.io/
+
+http://petstore.swagger.io/v2/swagger.json
+
+
+***
+
+## c. Coherence
+
+***
+
+### `/InitAccount?user_key=1`
+
+### `/init-account?user-key=1`
+### `/InitAccount?UserKey=1`
+
+***
+
+### `/InitAccount?user_key=1` ✘
+
+### `/init-account?user-key=1` ✓
+### `/InitAccount?UserKey=1` ✓
+
+<img src="./img/sand-hand.jpg" width=200 height=150>
+<img src="./img/bucket.jpg" width=200 height=150>
+
+***
+
+### camelCased
+### under_scored
+### hyphen-separated
+
+### ?
+
+***
+
+<figure class="stretch">
+  <a href="http://shop.oreilly.com/product/0636920021575.do">
+    <img src="./img/rest-apis-design.jpg" height=1000>
+  </a>
+</figure>
+
+***
+
+### camelCased
+### under_scored
+### hyphen-separated ✓
+
+***
+
+### internal coherence > hyphens
+
+***
+
+### Headers in http
+
+``` bash
+curl -H 'app_key: "hey"' /account_creation/
+```
+
+#### vs
+
+``` bash
+curl -H 'App-Key: "hey"' /account_creation/
+```
+
+***
+
+http://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+
+
+``` no-highlight
+Accept Accept-Charset Accept-Encoding
+Accept-Language Accept-Datetime Authorization
+Cache-Control Connection Cookie Content-Length
+Content-MD5 Content-Type Date Expect From
+Host If-Match If-Modified-Since If-None-Match
+If-Range If-Unmodified-Since Max-Forwards
+Origin Pragma Proxy-Authorization Range
+Referer TE User-Agent Upgrade Via Warning
+```
+
+### *“Hyphenated-Case”*
+
+***
+
+### http > internal > hyphens
+
+***
+
+## d.Names
+
+***
+
+#### Single name for each individual concept
+
 | ✘         | ✓         |
 |-----------|-----------|
-| `O`| `Operator`       |
+| `user`    |           |
+| `account` | `user`    |
+| `client`  |           |
+
+***
+
+#### Single name for each individual concept
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `user`    |           |
+| `account` | `user`    |
+| `client`  |           |
+
+<img src="./img/sand-hand.jpg" width=200 height=150>
+<img src="./img/bucket.jpg" width=200 height=150>
+
+***
+
+#### One-letter ids
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `O`| `operator`       |
 | `l`  | `length`       |
 
 ***
 
+#### One-letter ids
+
 | ✘         | ✓         |
 |-----------|-----------|
-| `/O/0`  | `/Operator/0`       |
-| `?l=1`    | `?length=1`       |
+| `O`  | `operator`     |
+| `l`  | `length`       |
+
+<img src="./img/context.jpg" width=200 height=150>
 
 ***
 
+#### One-letter ids
+
 | ✘         | ✓         |
 |-----------|-----------|
-| `/O/0`  | `/Operator/0`       |
+| `/O/0`  | `/operator/0`       |
+| `?l=1`    | `?length=1`       |
+
+<img src="./img/context.jpg" width=200 height=150>
+
+***
+
+#### One-letter ids
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `/O/0`  | `/operator/0`       |
 | `?l=1`    | `?length=1`       |
 
 <img src="./img/context.jpg" width=200 height=150>
@@ -306,47 +510,94 @@ $ curl -X POST -d '' 0.0.0.0/hello
 
 ***
 
+#### One-letter ids
+
+<img src="./img/google.png" height=68>
+
+<img src="./img/gmail.png" height=68>
+
+***
+
+#### Pronunciation
+
 | ✘         | ✓         |
 |-----------|-----------|
-| `?tnkSz`  | `?tankSize` |
+| `?tnkSz`  | `?tank-size` |
+| `/usr/adr` | `/user/address/`  |
+
+***
+
+#### Pronunciation
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `?tnkSz`  | `?tank-size` |
 | `/usr/adr` | `/user/address/`  |
 
 <img src="./img/natural-language.png" width=200 height=150>
 
 ***
 
+#### Simple English
+
 | ✘         | ✓         |
 |-----------|-----------|
 | `scrawl`| `write`       |
-| `transclude`  | `partialCopy`       |
+| `transclude`  | `add-scope`       |
 | `wipe`  | `delete`       |
 
 
 ***
 
+#### Simple English
+
 | ✘         | ✓         |
 |-----------|-----------|
 | `scrawl`| `write`       |
-| `transclude`  | `partialCopy`       |
+| `transclude`  | `add-scope`       |
 | `wipe`  | `delete`       |
 
 <img src="./img/context.jpg" width=200 height=150>
 
 ***
 
+#### Sessions
+
 | ✘         | ✓         |
 |-----------|-----------|
-| `UserData`| `Account`       |
-| `OfficeService`  | `OfficeSupply`       |
-| `CarManager`  | `CarValet`       |
+| `sign-up/sign-in`| `register/log-in`  |
 
 ***
 
+#### Sessions
+
 | ✘         | ✓         |
 |-----------|-----------|
-| `UserData`| `Account`       |
-| `OfficeService`  | `OfficeSupply`       |
-| `CarManager`  | `CarValet`       |
+| `sign-up/sign-in`| `register/log-in`  |
+
+<img src="./img/context.jpg" width=200 height=150>
+<img src="./img/natural-language.png" width=200 height=150>
+
+http://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-users/
+
+***
+#### Concission
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `user-data`| `account`       |
+| `office-service`  | `office-supply`       |
+| `car-manager`  | `car-valet`       |
+
+***
+
+#### Concission
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `user-data`| `account`       |
+| `office-service`  | `office-supply`       |
+| `car-manager`  | `car-valet`       |
 
 <img src="./img/context.jpg" width=200 height=150>
 <img src="./img/sand-hand.jpg" width=200 height=150>
@@ -355,40 +606,31 @@ $ curl -X POST -d '' 0.0.0.0/hello
 
 ***
 
-### `/InitAccount?user_key=1`
+#### Concission
 
-### `/init_account?user_key=1`
-### `/InitAccount?UserKey=1`
-
-***
-
-### `/InitAccount?user_key=1` ✘
-
-### `/init_account?user_key=1` ✓
-### `/InitAccount?UserKey=1` ✓
-
-<img src="./img/sand-hand.jpg" width=200 height=150>
-<img src="./img/bucket.jpg" width=200 height=150>
+> “The further away from «Thing» and «Do stuff», the better”
 
 ***
 
 <figure class="stretch">
-  <img src="./img/clean-code.jpg" height=1000>
+  <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">
+    <img src="./img/clean-code.jpg" height=1000>
+  </a>
 </figure>
 
 ***
 
-# TODO: Grouping
+<!-- .slide: data-background="./img/front-bg.jpg" -->
+
+# 3.
+# User Guidelines
 
 ***
 
-# TODO: minimize
 
-***
 
-# 5. Conclusion
 
-http://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/
+# 4. Conclusion
 
 ***
 

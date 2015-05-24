@@ -264,6 +264,8 @@ body {
 .reveal pre {
   font-size: 0.7em; }
   .reveal pre code {
+    background: white;
+    color: black;
     padding: 1em;
     max-width: none;
     max-height: none; }

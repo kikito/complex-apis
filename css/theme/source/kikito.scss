@@ -50,12 +50,11 @@ $altLinkColor: lighten($linkColor, 30%);
     height: 100%;
   }
 
-
-
-
   pre {
     font-size: 0.7em;
     code {
+      background: white;
+      color: black;
       padding: 1em;
       max-width: none;
       max-height: none;
