@@ -126,7 +126,7 @@ $ curl -X POST -d '' 0.0.0.0/hello
 
 ***
 
-> “How difficult it is for the API users to understand it”
+> “How hard an API is to understand for its intended users”
 
 ***
 
@@ -134,11 +134,11 @@ $ curl -X POST -d '' 0.0.0.0/hello
 
 ***
 
-TODO: user scale
+## People
 
 ***
 
-## People
+## Guidelines, not rules
 
 ***
 
@@ -146,23 +146,243 @@ TODO: user scale
 
 # 2.
 # People
+***
+
+# TODO: Image of people
 
 ***
 
-TODO: user scale with colleage
+# TODO: Image of brain
+
+***
+
+<!-- .slide: data-background="./img/beware.jpg" -->
+
+***
+
+<!-- .slide: data-background="./img/sand-hand.jpg" -->
+
+## a. Memory
+
+***
+
+<figure class="stretch">
+  <img src="./img/cache-invalidation.jpg">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/7-symbols.png" width=800>
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/graph.png" width=800>
+</figure>
+
+***
+
+<!-- .slide: data-background="./img/storyteller.jpg" -->
+
+***
+
+<!-- .slide: data-background="./img/bucket.jpg" -->
+
+## b. Attention
+
+***
+
+<!-- .slide: data-background="./img/obama.jpg" -->
+
+### “Only blue or gray suits”
+
+***
+
+<!-- .slide: data-background="./img/steve-jobs.jpg" -->
+
+***
+
+<!-- .slide: data-background="./img/distracted.jpg" -->
+
+***
+
+<!-- .slide: data-background="./img/15-minutes.jpg" -->
+
+***
+
+## c. Analytis & Synthesis
+
+<figure class="stretch">
+  <img src="./img/analysis.jpg" width=1000>
+</figure>
+
+***
+
+## d. Vision
+
+<!-- .slide: data-background="./img/rorschach.jpg" -->
+
+***
+
+<!-- .slide: data-background="./img/illusion.jpg" -->
+
+***
+
+<figure class="stretch">
+  <img src="./img/rabbit-duck.jpg">
+</figure>
+
+***
+
+## e. Natural Language
+<figure class="stretch">
+  <img src="./img/natural-language.png" width=1000>
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/groucho-1.png" width=1000>
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/groucho-2.png" width=1000>
+</figure>
+
+***
+
+## f. Context
+<figure class="stretch">
+  <img src="./img/context.jpg" width=1000>
+</figure>
+
+***
+
+## The human brain:
+
+<figure class="stretch">
+  <img src="./img/sand-hand.jpg" width=300 height=200>
+  <img src="./img/bucket.jpg" width=300 height=200>
+  <img src="./img/analysis.jpg" width=300 height=200>
+  <img src="./img/rorschach.jpg" width=300 height=200>
+  <img src="./img/natural-language.png" width=300 height=200>
+  <img src="./img/context.jpg" width=300 height=200>
+</figure>
 
 ***
 
 <!-- .slide: data-background="./img/front-bg.jpg" -->
 
 # 3.
-# Users
+# Applications
+
 ***
 
-<!-- .slide: data-background="./img/front-bg.jpg" -->
+| ✘         | ✓         |
+|-----------|-----------|
+| `O`| `Operator`       |
+| `l`  | `length`       |
 
-# 4.
-# Baz
+***
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `/O/0`  | `/Operator/0`       |
+| `?l=1`    | `?length=1`       |
+
+***
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `/O/0`  | `/Operator/0`       |
+| `?l=1`    | `?length=1`       |
+
+<img src="./img/context.jpg" width=200 height=150>
+<img src="./img/rorschach.jpg" width=200 height=150>
+
+***
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `?tnkSz`  | `?tankSize` |
+| `/usr/adr` | `/user/address/`  |
+
+<img src="./img/natural-language.png" width=200 height=150>
+
+***
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `scrawl`| `write`       |
+| `transclude`  | `partialCopy`       |
+| `wipe`  | `delete`       |
+
+
+***
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `scrawl`| `write`       |
+| `transclude`  | `partialCopy`       |
+| `wipe`  | `delete`       |
+
+<img src="./img/context.jpg" width=200 height=150>
+
+***
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `UserData`| `Account`       |
+| `OfficeService`  | `OfficeSupply`       |
+| `CarManager`  | `CarValet`       |
+
+***
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `UserData`| `Account`       |
+| `OfficeService`  | `OfficeSupply`       |
+| `CarManager`  | `CarValet`       |
+
+<img src="./img/context.jpg" width=200 height=150>
+<img src="./img/sand-hand.jpg" width=200 height=150>
+<img src="./img/rorschach.jpg" width=200 height=150>
+<img src="./img/analysis.jpg" width=200 height=150>
+
+***
+
+### `/InitAccount?user_key=1`
+
+### `/init_account?user_key=1`
+### `/InitAccount?UserKey=1`
+
+***
+
+### `/InitAccount?user_key=1` ✘
+
+### `/init_account?user_key=1` ✓
+### `/InitAccount?UserKey=1` ✓
+
+<img src="./img/sand-hand.jpg" width=200 height=150>
+<img src="./img/bucket.jpg" width=200 height=150>
+
+***
+
+<figure class="stretch">
+  <img src="./img/clean-code.jpg" height=1000>
+</figure>
+
+***
+
+# TODO: Grouping
+
+***
+
+# TODO: minimize
 
 ***
 

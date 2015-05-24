@@ -149,5 +149,15 @@ $altLinkColor: lighten($linkColor, 30%);
     font-style: normal;
     font-size: 0.7em;
   }
+
+  table {
+    width: 100%;
+    font-size: 1.2em;
+    td, th {
+      text-align: center;
+      width: 50%;
+      border-bottom: none;
+    }
+  }
 }
 

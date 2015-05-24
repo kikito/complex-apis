@@ -313,3 +313,10 @@ body {
 .reveal cite {
   font-style: normal;
   font-size: 0.7em; }
+.reveal table {
+  width: 100%;
+  font-size: 1.2em; }
+  .reveal table td, .reveal table th {
+    text-align: center;
+    width: 50%;
+    border-bottom: none; }
