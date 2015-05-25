@@ -50,6 +50,10 @@ $altLinkColor: lighten($linkColor, 30%);
     height: 100%;
   }
 
+  ul {
+    font-size: 2em;
+  }
+
   pre {
     font-size: 0.7em;
     code {
@@ -73,10 +77,28 @@ $altLinkColor: lighten($linkColor, 30%);
     // border: 1px solid #fefefe;
   }
 
-  .stretch img {
-    margin: 0;
-    max-width: 100%;
-    max-height: 100%;
+  .valign {
+    position: relative;
+
+    a {
+      display: block;
+      height: 100%;
+    }
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .stretch {
+    img {
+      margin: 0;
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   .bottom {

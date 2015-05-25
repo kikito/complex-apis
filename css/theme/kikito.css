@@ -261,6 +261,8 @@ body {
 
 .reveal .tall {
   height: 100%; }
+.reveal ul {
+  font-size: 2em; }
 .reveal pre {
   font-size: 0.7em; }
   .reveal pre code {
@@ -274,6 +276,16 @@ body {
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin-bottom: 0.5em;
   text-size-adjust: auto; }
+.reveal .valign {
+  position: relative; }
+  .reveal .valign a {
+    display: block;
+    height: 100%; }
+  .reveal .valign img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
 .reveal .stretch img {
   margin: 0;
   max-width: 100%;
