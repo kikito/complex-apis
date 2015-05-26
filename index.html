@@ -70,8 +70,8 @@ https://kikito.github.io/complex-apis
 <!-- .slide: data-background="#008AB8" -->
 
 ## 1. Intro
-## 2. General Guidelines
-## 3. User Guidelines
+## 2. Design Principles
+## 3. User Scale
 ## 4. Conclusion
 
 ***
@@ -115,6 +115,14 @@ $ curl -X POST -d '' 0.0.0.0/hello
 ***
 
 > “The number of endpoints, methods and parameters of an API”
+
+***
+
+## Complication
+
+***
+
+## Inherent Complexity
 
 ***
 
@@ -192,7 +200,7 @@ $ curl -X POST -d '' 0.0.0.0/hello
 
 ***
 
-## c. Analytis & Synthesis
+## c. Analysis & Synthesis
 
 <figure class="stretch valign">
   <img src="./img/analysis.jpg" width=1000>
@@ -258,7 +266,7 @@ $ curl -X POST -d '' 0.0.0.0/hello
 <!-- .slide: data-background="./img/front-bg.jpg" -->
 
 # 2.
-# General Guidelines
+# Design Principles
 
 ***
 
@@ -325,16 +333,6 @@ api.foo.io/orders/v1/...
 
 api.foo.io/purchases/v3/...
 ```
-
-***
-
-### Group by responsibility
-
-***
-
-### Responsibility
-
-> “The reason an API has to change”
 
 ***
 
@@ -559,7 +557,7 @@ Referer TE User-Agent Upgrade Via Warning
 
 ***
 
-#### Sessions
+#### Similar words
 
 | ✘         | ✓          |
 |-----------|------------|
@@ -568,19 +566,21 @@ Referer TE User-Agent Upgrade Via Warning
 
 ***
 
-#### Sessions
+#### Similar words
 
 | ✘         | ✓          |
 |-----------|------------|
 | `sign-up` | `register` |
 | `sign-in` | `log-in`   |
 
-<img src="./img/context.jpg" width=200 height=150>
-<img src="./img/natural-language.png" width=200 height=150>
+<img src="./img/rorschach.jpg" width=200 height=150>
+<img src="./img/bucket.jpg" width=200 height=150>
+<img src="./img/analysis.jpg" width=200 height=150>
 
 http://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-users/
 
 ***
+
 #### Concission
 
 | ✘         | ✓         |
@@ -588,6 +588,13 @@ http://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-user
 | `user-data`| `account`       |
 | `office-service`  | `office-supply`       |
 | `car-manager`  | `car-valet`       |
+
+***
+
+> “The further away from «Thing» and «Do stuff», the better”
+
+90% of it is avoiding `Data`, `Info`, `Object`, `Application`, `Service`,
+`Handler` & `Manager`.
 
 ***
 
@@ -606,9 +613,43 @@ http://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-user
 
 ***
 
-#### Concission
+#### Acronyms
 
-> “The further away from «Thing» and «Do stuff», the better”
+| ✘         | ✓         |
+|-----------|-----------|
+| `AC`| `access-control`       |
+| `VTS` | `vertical-test-stand`
+
+***
+
+#### Acronyms
+
+| ✘         | ✓         |
+|-----------|-----------|
+| `AC`| `access-control`       |
+| `VTS` | `vertical-test-stand`
+
+<img src="./img/context.jpg" width=200 height=150>
+<img src="./img/sand-hand.jpg" width=200 height=150>
+<img src="./img/analysis.jpg" width=200 height=150>
+
+***
+
+<figure class="stretch valign">
+  <a href="http://www.amazon.com/Elon-Musk-SpaceX-Fantastic-Future/dp/0062301233">
+    <img src="./img/elon-book.jpg" height=1000>
+  </a>
+</figure>
+
+***
+
+#### “Acronyms Seriously Suck”
+
+<figure class="stretch valign">
+  <a href="https://twitter.com/collision/status/602950284864692224">
+    <img src="./img/elon-acronyms.png" height=1000>
+  </a>
+</figure>
 
 ***
 
@@ -623,19 +664,15 @@ http://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-user
 <!-- .slide: data-background="./img/front-bg.jpg" -->
 
 # 3.
-# User Guidelines
+# User scale
 
 ***
-
-## User scale
 
 <figure class="stretch valign">
   <img src="./img/user-scale-1.png" height=1000>
 </figure>
 
 ***
-
-## User scale
 
 <figure class="stretch valign">
   <img src="./img/user-scale-2.png" height=1000>
@@ -645,6 +682,12 @@ http://uxmovement.com/buttons/why-sign-up-and-sign-in-button-labels-confuse-user
 
 <figure class="stretch valign">
   <img src="./img/jennifer.jpg" height=1000>
+</figure>
+
+***
+
+<figure class="stretch valign">
+  <img src="./img/user-scale-3.png" height=1000>
 </figure>
 
 ***
@@ -712,6 +755,12 @@ http://swagger.io
 
 ***
 
+<figure class="stretch valign">
+  <img src="./img/user-scale-4.png" height=1000>
+</figure>
+
+***
+
 * <del>Coworkers</del>
 * <del>Source Code</del>
 * Bussiness ?
@@ -758,7 +807,7 @@ curl -H 'Authorization: "xxx"' api.com/foo/
 ***
 
 <figure class="stretch valign">
-  <img src="./img/swim.png" width=1000>
+  <img src="./img/user-scale-5.png" height=1000>
 </figure>
 
 ***
@@ -766,8 +815,14 @@ curl -H 'Authorization: "xxx"' api.com/foo/
 * <del>Coworkers</del>
 * <del>Source Code</del>
 * Bussiness ?
-* Documentation ?
+* Documentation
 * http ?
+
+***
+
+<figure class="stretch valign">
+  <img src="./img/swim.png" width=1000>
+</figure>
 
 ***
 
@@ -837,6 +892,12 @@ curl -H 'Authorization: "xxx"' api.com/foo/
 
 ***
 
+### Complex
+### Complicated
+### Subjective
+
+***
+
 ## The human brain:
 
 <figure class="stretch">
@@ -850,19 +911,24 @@ curl -H 'Authorization: "xxx"' api.com/foo/
 
 ***
 
-## Numbers
+### YAGNI
+### Groups
+### Coherence
+### Names
 
 ***
 
-## Psychology
+## User scale
+
+<figure class="stretch valign">
+  <img src="./img/user-scale-2.png" height=1000>
+</figure>
 
 ***
 
-## Design
+<!-- .slide: data-background="./img/ux.jpg" -->
 
-***
-
-## UX
+# User Experience
 
 ***
 
